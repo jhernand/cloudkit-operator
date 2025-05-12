@@ -63,6 +63,9 @@ spec:
         args:
           - --leader-elect
           - --health-probe-bind-address=:8081
+          - --grpc-insecure
+          - --grpc-token-file=/var/run/secrets/kubernetes.io/serviceaccount/token
+          - --fulfillment-server-address=fulfillment-api.innabox.svc:8000
         image: controller:latest
         imagePullPolicy: Always
         name: manager
